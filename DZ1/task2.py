@@ -4,9 +4,7 @@
 
 n = int(input('Введите число: '))
 sum = 0
-while n // 10 != 0:
-    n1 = n % 10
-    n = n // 10
-    sum = sum + n1 
-sum += n
+while n > 0:
+    sum += n % 10
+    n //= 10
 print('Сумма цифр числа: ', sum)

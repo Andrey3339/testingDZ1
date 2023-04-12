@@ -11,17 +11,14 @@ else:
     N1 = N % 1000
     N2 = (N - N1) // 1000
 
-    def Sum(n: int):
-        #global sum
+    def subsum(n: int):
         sum = 0
-        while n // 10 != 0:
-            n1 = n % 10
-            sum = sum + n1
-            n = n // 10
-        sum += n
-        return int(sum)
+        while n > 0:
+            sum += n % 10
+            n //= 10
+        return sum
 
-    if Sum(N1) == Sum(N2):
+    if subsum(N1) == subsum(N2):
         print(f'Билет с номером {N} счастливый.')
     else:
         print(f'Билет с номером {N} НЕ счастливый.')
