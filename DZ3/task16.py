@@ -8,16 +8,16 @@
 #    7 -2 3 5 1
 #    3
 #    -> 1
+from random import randint
 
 def task16():
-    from random import randint
     N, d1, d2 = input('введите количество элементов в массиве и диапазон от и до через пробел: ').split()
     mas = [randint(int(d1), int(d2)) for _ in range(int(N))]
     print(*mas)
     n  = int(input('Введите цифру, чтобы узнать сколько раз она встречается в массиве: '))
     count = 0
-    for i in range(len(mas)):
-        if n == mas[i]:
+    for el in mas:
+        if n == el:
             count += 1
     print(f'-> {count}')
 

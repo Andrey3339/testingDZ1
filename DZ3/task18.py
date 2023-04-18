@@ -22,10 +22,14 @@ def task18():
     print(n)
     min = abs(n - max(mas))
     el = max(mas)
-    for i in range(len(mas)):
-        if abs(n - mas[i]) < min:
-            min = abs(n - mas[i])
-            el = mas[i]
+    # for i in range(len(mas)):
+    #     if abs(n - mas[i]) < min:
+    #         min = abs(n - mas[i])
+    #         el = mas[i]
+    for e in mas:
+        if abs(n - e) < min:
+            min = abs(n - e)
+            el = e
     print(f'-> {el}')
 
 task18()

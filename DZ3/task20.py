@@ -61,6 +61,28 @@ def task20v2():
     print(f'Стоимость введенного "{S}": {sum} = {cost}')
     #print(f'Стоимость введенного "{S}" = {cost}')
 
-task20v2()
+#task20v2()
 
 
+def task20v3():
+    weight = {  0 : ' ', 1 : 'АВЕИНОРСТAEIOULNSTR', 2 : 'ДКЛМПУDG', 
+    3 : 'БГЁЬЯBCMP', 4 : 'ЙЫFHVWY', 5 : 'ЖЗХЦЧK', 8 : 'ШЭЮJX', 10 : 'ФЩЪQZ' }
+        
+    #weight_en = { 1 : [ 'A', 'E', 'I', 'O', 'U', 'L', 'N', 'S', 'T', 'R' ], 2 : [ 'D', 'G' ], 3 : [ 'B', 'C', 'M', 'P' ], 
+    #4 : [ 'F', 'H', 'V', 'W', 'Y' ], 5 : [ 'K' ], 8 : [ 'J', 'X' ], 10 : [ 'Q', 'Z' ]}
+    
+    S = input('Введите слово или фразу на любом языке, чтобы посчитать его стоимость: ')
+    s = S.upper()
+    cost = 0
+    val = list()
+    for el in s:
+        for k, v in weight.items():
+            for c in v:
+                if el in c:
+                    cost += k
+                    val.append(str(k))
+    sum = ' + '.join(val)
+    print(f'Стоимость введенного "{S}": {sum} = {cost}')
+    #print(f'Стоимость введенного "{S}" = {cost}')
+
+task20v3()   
