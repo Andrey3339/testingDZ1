@@ -77,10 +77,10 @@ def task20v3():
     val = list()
     for el in s:
         for k, v in weight.items():
-            for c in v:
-                if el in c:
-                    cost += k
-                    val.append(str(k))
+            #for c in v:
+            if el in v:
+                cost += k
+                val.append(str(k))
     sum = ' + '.join(val)
     print(f'Стоимость введенного "{S}": {sum} = {cost}')
     #print(f'Стоимость введенного "{S}" = {cost}')
