@@ -13,17 +13,23 @@
 poem = list(input('Введите считалку Винни через пробел:  ').split())
 print(poem)
 
-def find_rhythm(poem):
-    vowels_letters = ['у','е','ы','а','о','э','я','и','ю']
+def find_rhythm(poem: list):
+    #vowels_letters = ['у','е','ы','а','о','э','я','и','ю']
+    vowels_letters = 'уеыаоэяию'
     count = 0
+    sum_vowels_in_phrase = set()
     parity = True
     for phrase in poem:
         for letter in phrase:
-            if letter in vowels_letters:
-                count += 1
-        if count % 2 != 0:
-            parity = False
-    return parity
+            #if letter in vowels_letters:
+            #    count += 1
+            count += letter in vowels_letters
+        sum_vowels_in_phrase.add(count)    
+        # if count % 2 != 0:
+        #     parity = False
+        count = 0
+    #return parity
+    return len(sum_vowels_in_phrase) <= 1
 
 if find_rhythm(poem):
     print('Парам пам-пам')
